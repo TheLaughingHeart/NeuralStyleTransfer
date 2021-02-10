@@ -37,8 +37,8 @@ def load_img(path_to_img):
   return img
 
 model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
-content_image = load_img('source image')
-style_image = load_img('style image')
+content_image = load_img('source image path')
+style_image = load_img('style image path')
 
 
 stylized_image = model(tf.constant(content_image), tf.constant(style_image))[0]
